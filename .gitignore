@@ -1,1 +1,5 @@
-.vscode/settings.json
+.vscode/*
+*.sqlite3
+*.pyc
+online_cinema/content/migrations/*
+!/online_cinema/content/migrations/__init__.py
