@@ -1,0 +1,32 @@
+{% extends 'content/base.html' %}
+
+{% block title %}
+    {% for content in actor %}
+        {{ content.name_actor }}
+    {% endfor %}
+{% endblock %}
+
+{% block content %}
+<div class="content">
+    {% for content in actor %}
+    <div class="about-actor">
+        <div class="about-actor-photo">
+            <img src="{{ content.image_actor }}" alt="photo">
+        </div>
+        <div class="about-actor-info">
+            <div class="about-actor-info-name">
+                <p>{{ content.name_actor }}</p>
+            </div>
+            <div class="about-actor-info-text">
+                <p>About actor</p>
+            </div>
+        </div>
+        <div class="about-actor-films">
+            {% for content in movies %}
+            <a href="{% url 'film' pk=content.id %}">{{ content.name_film }}</a>
+            {% endfor %}
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

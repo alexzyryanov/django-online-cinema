@@ -1,0 +1,425 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates&display=swap');
+
+* {
+	padding: 0;
+	margin: 0;
+    font-family: Montserrat Alternates;
+}
+
+html, body {
+    height: 100%;
+    background-color: #333333;
+}
+
+.wrapper {
+    margin: 0 auto;
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    width: 1100px;
+}
+
+
+/* header */
+
+header {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 50px;
+    width: 100%;
+}
+
+.site-nav, .account-nav {
+    display: flex;
+    flex-direction: row;
+}
+
+.nav-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 10px;
+    height: 100%;
+
+}
+
+.nav-button:hover {
+    border-bottom: 4px solid yellow;
+}
+
+.nav-button > a {
+    color: white;
+    font-size: 20px;
+    text-decoration: none;
+}
+
+.nav-button > a:hover{
+    color: yellow;
+}
+
+
+/* content */
+
+.content {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 auto;
+    width: 100%;
+}
+
+.container-movie {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 20px 0;
+}
+
+.item {
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+    width: 200px;
+    height: 325px;
+}
+
+.cover {
+    width: 100%;
+    height: 300px;
+}
+
+.cover > a > img {
+    width: 100%;
+    height: 100%;
+    background-color: gray;
+}
+
+.name {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 25px;
+}
+
+.name > a {
+    width: 100%;
+    text-decoration: none;
+    color: white;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.name > a:hover {
+    color: yellow;
+}
+
+
+/* footer */
+
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    height: 50px;
+    width: 100%;
+}
+
+.developer > a {
+    color: white;
+    text-decoration: none;
+}
+
+.developer > a:hover {
+    color: yellow;
+}
+
+
+/* pagination */
+
+.pagination {
+    margin: 20px auto;
+    display: flex;
+    flex-direction: row;
+    height: 50px;
+    width: 300px;
+}
+
+.pag-button {
+    display: flex;
+    height: 100%;
+    width: 50px;
+}
+
+.pag-button > a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    border-radius: 25px;
+    border: 1px solid yellow;
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+.pag-button > a:hover {
+    background-color: yellow;
+    color: black;
+}
+
+.paginator-info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100px;
+    color: white;
+    font-size: 20px;
+}
+
+
+/* genres */
+
+.container-genres {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    margin: 20px 0;
+}
+
+.genre {
+    display: flex;
+    margin: 10px;
+}
+
+.genre > a {
+    padding: 10px;
+    border: 1px solid yellow;
+    border-radius: 10px;
+    color: white;
+    text-decoration: none;
+}
+
+.genre > a:hover {
+    background-color: yellow;
+    color: black;
+}
+
+
+/* actors */
+
+.container-actors {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 20px 0;
+}
+
+.actor {
+    margin: 8px;
+    display: flex;
+    flex-direction: column;
+    width: 140px;
+    height: 225px;
+}
+
+.actor-photo {
+    background-color: gray;
+    height: 200px;
+    width: 140px;
+}
+
+.actor-photo > a > img {
+    height: 100%;
+    width: 100%;
+}
+
+.actor-name {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 25px;
+    width: 100%;
+}
+
+.actor-name > a {
+    color: white;
+    text-decoration: none;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.actor-name > a:hover {
+    color: yellow;
+}
+
+
+/* about actor */
+
+.about-actor {
+    display: flex;
+    flex-direction: row;
+    margin: 20px 0;
+    width: 100%;
+    height: 500px;
+}
+
+.about-actor-photo {
+    height: 100%;
+    width: 320px;
+}
+
+.about-actor-photo > img {
+    height: 100%;
+    width: 100%;
+}
+
+.about-actor-info {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 600px;
+}
+
+.about-actor-info-name {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    width: 100%;
+}
+
+.about-actor-info-name > p {
+    font-size: 30px;
+    color: white;
+}
+
+.about-actor-info-text {
+    padding: 20px;
+}
+
+.about-actor-info-text > p {
+    color: white;
+    font-size: 15px;
+}
+
+.about-actor-films {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    width: 180px;
+}
+
+.about-actor-films > a {
+    color: white;
+    margin: 5px 0;
+    text-decoration: none;
+}
+
+.about-actor-films > a:hover {
+    color: yellow;
+}
+
+
+/* movie */
+
+.movie {
+    display: flex;
+    flex-direction: row;
+    margin: 20px 0;
+    width: 100%;
+    height: 500px;
+}
+
+.movie-content {
+    height: 100%;
+    width: 700px;
+}
+
+.movie-content-name {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100px;
+}
+
+.movie-content-name > h1 {
+    color: white;
+    font-size: 30px;
+}
+
+.movie-content-film {
+    height: 400px;
+    width: 100%;
+}
+
+.movie-content-film > a > img {
+    width: 100%;
+    height: 100%;
+}
+
+.about-content {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 400px;
+}
+
+.about-content-genres {
+    padding: 10px;
+    height: 100px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.about-content-genres > a {
+    color: white;
+    text-decoration: none;
+    margin: 0 5px;
+}
+
+.about-content-genres > a:hover {
+    color: yellow;
+}
+
+.about-content-actors {
+    padding: 10px;
+    height: 100px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.about-content-actors > a {
+    color: white;
+    font-size: 10px;
+    text-decoration: none;
+    margin: 0 5px;
+}
+
+.about-content-actors > a:hover {
+    color: yellow;
+}
+
+.about-content-film {
+    display: flex;
+    padding: 10px;
+    height: 300px;
+    width: 100%;
+}
+
+.about-content-film > p {
+    color: white;
+    font-size: 15px;
+}

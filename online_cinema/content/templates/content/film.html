@@ -1,0 +1,43 @@
+{% extends 'content/base.html' %}
+
+{% block title %}
+    {% for content in movies %}
+        {{ content.name_film }}
+    {% endfor %}
+{% endblock %}
+
+{% block content %}
+<div class="content">
+
+    <div class="movie">
+        {% for content in movies %}
+        <div class="movie-content">
+            <div class="movie-content-name">
+                <h1>{{ content.name_film }} ({{ content.years }})</h1>
+            </div>
+            <div class="movie-content-film">
+                <a href="{{ content.video_film }}" target="_blank">
+                    <img src="{{ content.video_film }}" alt="cover">
+                </a>
+            </div>
+        </div>
+        {% endfor %}
+        <div class="about-content">
+            <div class="about-content-genres">
+                {% for content in genres %}
+                <a href="{% url 'genre_films' pk=content.id %}">{{ content.name_genre }}</a>
+                {% endfor %}
+            </div>
+            <div class="about-content-actors">
+                {% for content in actors %}
+                <a href="{% url 'actor_about' pk=content.id %}">{{ content.name_actor }}</a>
+                {% endfor %}
+            </div>
+            <div class="about-content-film">
+                <p>About film</p>
+            </div>
+        </div>
+    </div>
+
+</div>
+{% endblock %}

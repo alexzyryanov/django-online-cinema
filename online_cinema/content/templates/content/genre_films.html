@@ -1,0 +1,22 @@
+{% extends 'content/base.html' %}
+
+{% block title %}Genres{% endblock %}
+
+{% block content %}
+<div class="content">
+    <div class="container-movie">
+        {% for content in movies %}
+        <div class="item">
+            <div class="cover">
+                <a href="{% url 'film' pk=content.id %}">
+                    <img src="{{ content.cover_film }}" alt="cover">
+                </a>
+            </div>
+            <div class="name">
+                <a href="{% url 'film' pk=content.id %}" title="{{ content.name_film }}">{{ content.name_film }}</a>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,43 @@
+{% extends 'content/base.html' %}
+
+{% block title %}Movies{% endblock %}
+
+{% block content %}
+<div class="content">
+    <div class="container-movie">
+        {% for content in page_obj %}
+        <div class="item">
+            <div class="cover">
+                <a href="{% url 'film' pk=content.id %}">
+                    <img src="{{ content.cover_film }}" alt="cover">
+                </a>
+            </div>
+            <div class="name">
+                <a href="{% url 'film' pk=content.id %}" title="{{ content.name_film }}">{{ content.name_film }}</a>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+{% if page_obj.has_previous or page_obj.has_next %}
+<div class="pagination">
+    {% if page_obj.has_previous %}
+    <span class="pag-button"><a href="?page=1"><<</a></span>
+    <span class="pag-button"><a href="?page={{ page_obj.previous_page_number }}"><</a></span>
+    {% else %}
+    <span class="pag-button"></a></span>
+    <span class="pag-button"></a></span>
+    {% endif %}
+
+    <span class="paginator-info">
+        {{ page_obj.number }} - {{ page_obj.paginator.num_pages }}
+    </span>
+
+    {% if page_obj.has_next %}
+    <span class="pag-button"><a href="?page={{ page_obj.next_page_number }}">></a></span>
+    <span class="pag-button"><a href="?page={{ page_obj.paginator.num_pages }}">>></a></span>
+    {% endif %}    
+</div>
+{% endif %}
+{% endblock %}

@@ -1,0 +1,47 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        {% block title %}{% endblock %}
+    </title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <div class="wrapper">
+        <header>
+            <div class="site-nav">
+                <div class="nav-button">
+                    <a href="{% url 'index' %}">ГЛАВНАЯ</a>
+                </div>
+                <div class="nav-button">
+                    <a href="{% url 'movies' %}">ФИЛЬМЫ</a>
+                </div>
+                <div class="nav-button">
+                    <a href="{% url 'genres' %}">ЖАНРЫ</a>
+                </div>
+                <div class="nav-button">
+                    <a href="{% url 'actors' %}">АКТЕРЫ</a>
+                </div>
+            </div>
+            <div class="account-nav">
+                <div class="nav-button">
+                    <a href="#">ВОЙТИ</a>
+                </div>
+            </div>
+        </header>
+        
+        {% block content %}{% endblock %}
+
+        <footer>
+            <div class="developer">
+                <a href="https://github.com/vonred5" target="_blank">GitHub</a>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
