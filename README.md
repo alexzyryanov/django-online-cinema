@@ -1,1 +1,1 @@
-# dgango-online-cinema
+# django-online-cinema
