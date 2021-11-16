@@ -9,5 +9,8 @@ urlpatterns = [
     path('genres/', views.genres, name='genres'),
     path('genres/<int:pk>/', views.genre_films, name='genre_films'),
     path('actors/', views.actors, name='actors'),
-    path('actors/<int:pk>/', views.actor_about, name='actor_about')
+    path('actors/<int:pk>/', views.actor_about, name='actor_about'),
+    path('login/', views.user_login, name='login'),
+    path('register/', views.register, name='register'),
+    path('logout/', views.user_logout, name='logout')
 ]

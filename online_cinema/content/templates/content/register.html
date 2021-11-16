@@ -1,0 +1,20 @@
+{% extends "content/base.html" %}
+
+{% block title %}Register{% endblock %}
+
+{% block content %}
+<div class="content">
+    <div class="aunth-container">
+        <form method="POST">
+            {% csrf_token %}
+            {% for field in user_form %}
+                {{ field }}
+            {% endfor %}
+            <div class="but-block">
+                <button type="submit">Регистрация</button>
+                <a href="{% url 'login' %}">Вход</a>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}

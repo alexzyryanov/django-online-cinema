@@ -29,9 +29,18 @@
                 </div>
             </div>
             <div class="account-nav">
+                {% if user.is_authenticated %}
                 <div class="nav-button">
-                    <a href="#">ВОЙТИ</a>
+                    <a href="#">{{ request.user }}</a>
                 </div>
+                <div class="nav-button">
+                    <a href="{% url 'logout' %}">выход</a>
+                </div>
+                {% else %}
+                <div class="nav-button">
+                    <a href="{% url 'login' %}">ВОЙТИ</a>
+                </div>
+                {% endif %}
             </div>
         </header>
         
