@@ -35,10 +35,21 @@ class Content(models.Model):
     genres = models.ManyToManyField(Genre, verbose_name="Жанры фильма")
     years = models.BigIntegerField(verbose_name="Год выхода")
 
-
     def __str__(self):
         return self.name_film
     
     class Meta:
         verbose_name = "Фильм"
         verbose_name_plural = "Фильмы"
+
+
+class User_like(models.Model):
+    user = models.CharField(max_length=200, unique=True, verbose_name="Имя пользователя")
+    like = models.ManyToManyField(Content, verbose_name="Понравившиеся")
+
+    def __str__(self):
+        return self.user
+    
+    class Meta:
+        verbose_name = "Пользователь"
+        verbose_name_plural = "Пользователи"
