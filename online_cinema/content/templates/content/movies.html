@@ -14,6 +14,7 @@
             </div>
             <div class="name">
                 <a href="{% url 'film' pk=content.id %}" title="{{ content.name_film }}">{{ content.name_film }}</a>
+                <button onclick="like({{ content.id }})">like</button>
             </div>
         </div>
         {% endfor %}
