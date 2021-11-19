@@ -8,13 +8,13 @@
         {% for content in page_obj %}
         <div class="item">
             <div class="cover">
+                <div class="but-like" onclick="like({{ content.id }})">like</div>
                 <a href="{% url 'film' pk=content.id %}">
                     <img src="{{ content.cover_film }}" alt="cover">
                 </a>
             </div>
             <div class="name">
                 <a href="{% url 'film' pk=content.id %}" title="{{ content.name_film }}">{{ content.name_film }}</a>
-                <button onclick="like({{ content.id }})">like</button>
             </div>
         </div>
         {% endfor %}

@@ -97,9 +97,14 @@ def user_logout(request):
 def api(request):
     if str(request.user) != "AnonymousUser":
         data = json.loads(request.body)
-        user_like = User_like.objects.get(user = request.user)
-        user_like.like.add(data["id"])
-        return HttpResponse("like append")
+        if data["type"] == "like":
+            user_like = User_like.objects.get(user = request.user)
+            user_like.like.add(data["id"])
+            return HttpResponse("like append")
+        elif data["type"] == "like_del":
+            user_like_del = User_like.objects.get(user = request.user)
+            user_like_del.like.remove(data["id"])
+            return HttpResponse("like del")
     else:
         return HttpResponse("need register")
 

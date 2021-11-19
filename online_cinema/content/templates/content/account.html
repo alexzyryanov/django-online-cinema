@@ -8,6 +8,7 @@
         {% for content in movies %}
         <div class="item">
             <div class="cover">
+                <div class="but-del" onclick="likeDel({{ content.id }})">del</div>
                 <a href="{% url 'film' pk=content.id %}">
                     <img src="{{ content.cover_film }}" alt="cover">
                 </a>

@@ -115,6 +115,40 @@ header {
     color: yellow;
 }
 
+.but-like {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    background-color: yellow;
+    height: 25px;
+    width: 40px;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.but-like:hover {
+    transform: scale(1.5);
+}
+
+.but-del {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    background-color: tomato;
+    height: 25px;
+    width: 40px;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.but-del:hover {
+    transform: scale(1.5);
+}
+
 
 /* footer */
 

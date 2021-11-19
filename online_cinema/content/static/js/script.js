@@ -45,3 +45,21 @@ async function like(id) {
     let data = await response.text()
     console.log(data)
 }
+
+
+async function likeDel(id) {
+    let response = await fetch("/api/", {
+      method: "POST",
+      headers: {"X-CSRFToken": getCookie("csrftoken")},
+      body: JSON.stringify({"type": "like_del", "id": id})
+    })
+    let data = await response.text()
+    console.log(data)
+    let divItem = document.querySelectorAll(".item")
+    for (i of divItem) {
+        if ((i.outerHTML).includes(`likeDel(${id})`)) {
+            i.remove()
+            break
+        }
+    }
+}
