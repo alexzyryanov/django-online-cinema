@@ -44,6 +44,15 @@ async function like(id) {
     })
     let data = await response.text()
     console.log(data)
+    let butLike = document.querySelectorAll(".but-like")
+    for (i of butLike) {
+        if ((i.outerHTML).includes(`like(${id})`)) {
+            i.style.width = "25px"
+            i.style.background = "lime"
+            i.style.transform = "rotate(180deg)"
+            i.innerText = ""
+        }
+    }
 }
 
 
