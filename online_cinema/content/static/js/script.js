@@ -67,7 +67,11 @@ async function likeDel(id) {
     let divItem = document.querySelectorAll(".item")
     for (i of divItem) {
         if ((i.outerHTML).includes(`likeDel(${id})`)) {
-            i.remove()
+            i.style.transition = "0.5s"
+            i.style.transform = "scale(0)"
+            setTimeout(() => {
+                i.remove()
+            }, 500);
             break
         }
     }
