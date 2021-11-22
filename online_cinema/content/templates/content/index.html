@@ -4,7 +4,7 @@
 
 {% block content %}
 <div class="content">
-    <div class="slider-wrapper">
+    <div class="container-slider">
         <div class="slider-track">
             <div class="slider-item">
                 <img src="https://avatars.mds.yandex.net/get-ott/1534341/2a0000017bf0ecb5ba9d037b88296a5dd96f/scale_1200" alt="movie">
@@ -21,12 +21,12 @@
         {% for content in movies %}
         <div class="item">
             <div class="cover">
-                <a href="{% url 'film' pk=content.id %}">
+                <a href="{% url 'movie' pk=content.id %}">
                     <img src="{{ content.cover_film }}" alt="cover">
                 </a>
             </div>
             <div class="name">
-                <a href="{% url 'film' pk=content.id %}" title="{{ content.name_film }}">{{ content.name_film }}</a>
+                <a href="{% url 'movie' pk=content.id %}" title="{{ content.name_film }}">{{ content.name_film }}</a>
             </div>
         </div>
         {% endfor %}
@@ -34,7 +34,7 @@
 
     <div class="container-genres">
         {% for content in genres %}
-        <div class="genre"><a href="{% url 'genre_films' pk=content.id %}">{{ content.name_genre }}</a></div>
+        <div class="genre"><a href="{% url 'genre' pk=content.id %}">{{ content.name_genre }}</a></div>
         {% endfor %}
     </div>
 
@@ -42,9 +42,9 @@
         {% for content in actors %}
         <div class="actor">
             <div class="actor-photo">
-                <a href="{% url 'actor_about' pk=content.id %}"><img src="{{ content.image_actor }}" alt="photo"></a>
+                <a href="{% url 'actor' pk=content.id %}"><img src="{{ content.image_actor }}" alt="photo"></a>
             </div>
-            <div class="actor-name"><a href="{% url 'actor_about' pk=content.id %}" title="{{ content.name_actor }}">{{ content.name_actor }}</a></div>
+            <div class="actor-name"><a href="{% url 'actor' pk=content.id %}" title="{{ content.name_actor }}">{{ content.name_actor }}</a></div>
         </div>
         {% endfor %}
     </div>

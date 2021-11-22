@@ -22,11 +22,11 @@ def movies(request):
     return render(request, "content/movies.html", {"page_obj": page_obj})
 
 
-def film(request, pk):
+def movie(request, pk):
     movies = Content.objects.filter(id = pk)
     actors = Content.objects.get(id = pk).actors.all()
     genres = Content.objects.get(id = pk).genres.all()
-    return render(request, "content/film.html", {"movies": movies, "actors": actors, "genres": genres})
+    return render(request, "content/movie.html", {"movies": movies, "actors": actors, "genres": genres})
 
 
 def genres(request):
@@ -34,9 +34,9 @@ def genres(request):
     return render(request, "content/genres.html", {"genres": genres})
 
 
-def genre_films(request, pk):
+def genre(request, pk):
     movies = Content.objects.filter(genres__id = pk)
-    return render(request, "content/genre_films.html", {"movies": movies})
+    return render(request, "content/genre.html", {"movies": movies})
 
 
 def actors(request):
@@ -47,27 +47,27 @@ def actors(request):
     return render(request, "content/actors.html", {"page_obj": page_obj})
 
 
-def actor_about(request, pk):
-    actor = Actor.objects.filter(id = pk)
+def actor(request, pk):
+    actors = Actor.objects.filter(id = pk)
     movies = Content.objects.filter(actors__id = pk)
-    return render(request, "content/actor_about.html", {"actor": actor, "movies": movies})
+    return render(request, "content/actor.html", {"actors": actors, "movies": movies})
 
 
 def register(request):
     if request.method == "POST":
-        user_form = UserRegistrationForm(request.POST)
-        if user_form.is_valid():
-            new_user = user_form.save(commit = False)
-            new_user.set_password(user_form.cleaned_data["password"])
+        form = UserRegistrationForm(request.POST)
+        if form.is_valid():
+            new_user = form.save(commit = False)
+            new_user.set_password(form.cleaned_data["password"])
             new_user.save()
             user_like = User_like(user = request.POST["username"])
             user_like.save()
-            user = authenticate(username = request.POST["username"], password = user_form.cleaned_data["password"])
+            user = authenticate(username = request.POST["username"], password = form.cleaned_data["password"])
             login(request, user)
             return redirect("/")
     else:
-        user_form = UserRegistrationForm()
-    return render(request, "content/register.html", {"user_form": user_form})
+        form = UserRegistrationForm()
+    return render(request, "content/register.html", {"form": form})
 
 
 def user_login(request):

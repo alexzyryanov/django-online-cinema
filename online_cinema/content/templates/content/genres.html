@@ -6,7 +6,7 @@
 <div class="content">
     <div class="container-genres">
         {% for content in genres %}
-        <div class="genre"><a href="{% url 'genre_films' pk=content.id %}">{{ content.name_genre }}</a></div>
+        <div class="genre"><a href="{% url 'genre' pk=content.id %}">{{ content.name_genre }}</a></div>
         {% endfor %}
     </div>
 </div>

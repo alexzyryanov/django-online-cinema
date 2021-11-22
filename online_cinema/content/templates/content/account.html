@@ -9,12 +9,12 @@
         <div class="item">
             <div class="cover">
                 <div class="but-del" onclick="likeDel({{ content.id }})">del</div>
-                <a href="{% url 'film' pk=content.id %}">
+                <a href="{% url 'movie' pk=content.id %}">
                     <img src="{{ content.cover_film }}" alt="cover">
                 </a>
             </div>
             <div class="name">
-                <a href="{% url 'film' pk=content.id %}" title="{{ content.name_film }}">{{ content.name_film }}</a>
+                <a href="{% url 'movie' pk=content.id %}" title="{{ content.name_film }}">{{ content.name_film }}</a>
             </div>
         </div>
         {% endfor %}

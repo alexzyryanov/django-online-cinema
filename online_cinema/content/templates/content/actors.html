@@ -8,9 +8,9 @@
         {% for content in page_obj %}
         <div class="actor">
             <div class="actor-photo">
-                <a href="{% url 'actor_about' pk=content.id %}"><img src="{{ content.image_actor }}" alt="photo"></a>
+                <a href="{% url 'actor' pk=content.id %}"><img src="{{ content.image_actor }}" alt="photo"></a>
             </div>
-            <div class="actor-name"><a href="{% url 'actor_about' pk=content.id %}" title="{{ content.name_actor }}">{{ content.name_actor }}</a></div>
+            <div class="actor-name"><a href="{% url 'actor' pk=content.id %}" title="{{ content.name_actor }}">{{ content.name_actor }}</a></div>
         </div>
         {% endfor %}
     </div>

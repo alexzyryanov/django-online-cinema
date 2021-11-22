@@ -24,17 +24,23 @@
         {% endfor %}
         <div class="about-content">
             <div class="about-content-genres">
-                {% for content in genres %}
-                <a href="{% url 'genre_films' pk=content.id %}">{{ content.name_genre }}</a>
-                {% endfor %}
+                <p>Жанры:</p>
+                <div class="about-content-genres-list">
+                    {% for content in genres %}
+                    <a href="{% url 'genre' pk=content.id %}">{{ content.name_genre }}</a>
+                    {% endfor %}
+                </div>
             </div>
             <div class="about-content-actors">
-                {% for content in actors %}
-                <a href="{% url 'actor_about' pk=content.id %}">{{ content.name_actor }}</a>
-                {% endfor %}
+                <p>Актеры:</p>
+                <div class="about-content-actors-list">
+                    {% for content in actors %}
+                    <a href="{% url 'actor' pk=content.id %}">{{ content.name_actor }}</a>
+                    {% endfor %}
+                </div>
             </div>
             <div class="about-content-film">
-                <p>About film</p>
+                <p></p>
             </div>
         </div>
     </div>
